@@ -27,6 +27,7 @@ import org.apache.maven.artifact.Artifact;
 import org.apache.maven.model.Resource;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
+import org.apache.maven.plugin.logging.Log;
 import org.codehaus.plexus.archiver.ArchiverException;
 import org.codehaus.plexus.archiver.jar.JarArchiver;
 import org.codehaus.plexus.archiver.util.DefaultFileSet;
@@ -72,6 +73,7 @@ public class ApklibMojo extends AbstractAndroidMojo {
             addDirectory(jarArchiver, assetsDirectory, "assets");
             addDirectory(jarArchiver, resourceDirectory, "res");
             addDirectory(jarArchiver, sourceDirectory, "src");
+            addDirectory(jarArchiver, libsDirectory, "libs");
             addJavaResources(jarArchiver, project.getBuild().getResources(), "src");
 
             jarArchiver.createArchive();

@@ -543,17 +543,13 @@ public class ApkMojo extends AbstractAndroidMojo {
         return nativeLibrariesDependenciesHardwareArchitectureDefault;
     }
 
-    private Set<Artifact> getNativeDependenciesArtifacts()
+	private Set<Artifact> getNativeDependenciesArtifacts()
     {
         final Set<Artifact> filteredArtifacts = new HashSet<Artifact>();
 
         // Add all dependent artifacts declared in the pom file
         @SuppressWarnings("unchecked")
         final Set<Artifact> allArtifacts = project.getDependencyArtifacts();
-
-        // Add all attached artifacts as well - this could come from the NDK mojo for example
-        @SuppressWarnings("unchecked")
-        allArtifacts.addAll( project.getAttachedArtifacts() );
 
         for (Artifact artifact : allArtifacts)
         {

@@ -144,6 +144,7 @@ public class DexMojo extends AbstractAndroidMojo {
             addDirectory(jarArchiver, assetsDirectory, "assets");
             addDirectory(jarArchiver, resourceDirectory, "res");
             addDirectory(jarArchiver, sourceDirectory, "src/main/java");
+            addDirectory(jarArchiver, libsDirectory, "libs");
             addJavaResources(jarArchiver, project.getBuild().getResources());
 
             jarArchiver.createArchive();

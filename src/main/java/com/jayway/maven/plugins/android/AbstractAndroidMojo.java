@@ -80,6 +80,14 @@ public abstract class AbstractAndroidMojo extends AbstractMojo {
     protected File sourceDirectory;
 
     /**
+     * The java libs directory.
+     *
+     * @parameter default-value="${project.basedir}/libs"
+     * @readonly
+     */
+    protected File libsDirectory;
+
+    /**
      * The android resources directory.
      *
      * @parameter default-value="${project.basedir}/res"
